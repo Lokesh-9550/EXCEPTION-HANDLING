@@ -4,7 +4,7 @@ class Alpha{
     Scanner sc=new Scanner(System.in);
     public void calc() throws ArithmeticException{
         
-        
+        try{
         System.out.println("Alpha connection is created");
         System.out.println("Enter numaratoe");
         int n1=sc.nextInt();
@@ -12,6 +12,11 @@ class Alpha{
         int n2=sc.nextInt();
         int res=n1/n2;
         System.out.println("Result is: "+res);
+        }
+        catch(ArithmeticException e){
+            System.out.println("do not enter zero at divider");
+            throw e;
+        }
         System.out.println("Alpha connection is terminated");
        
     }
