@@ -1,6 +1,9 @@
 import java.security.InvalidAlgorithmParameterException;
 import java.util.Scanner;
 class InvalidDetailsToWithDrawException extends Exception{
+    public InvalidDetailsToWithDrawException(String msg){
+        super(msg);
+    }
 
 }
 class Atm{
@@ -22,7 +25,9 @@ class Atm{
             System.out.println("withdraw cash to proceed");
         }
         else{
-          throw new InvalidDetailsToWithDrawException();
+          InvalidDetailsToWithDrawException exe=new InvalidDetailsToWithDrawException("Invalid Credentials");
+          System.out.println(exe.getMessage());
+          throw exe;
         }
     }
 }
@@ -34,6 +39,7 @@ class Bank{
             a.verify();
         }
         catch(InvalidDetailsToWithDrawException e){
+            System.out.println("try again");
             try{
                 a.input();
                 a.verify();
