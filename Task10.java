@@ -46,6 +46,8 @@ class Bank{
             }
             catch(InvalidDetailsToWithDrawException e2){
                 System.out.println("enter wrong details please check account number and password");
+                // e.printStackTrace();
+               
             }
         }
     }
